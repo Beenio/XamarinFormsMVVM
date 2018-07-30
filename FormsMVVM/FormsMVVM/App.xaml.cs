@@ -1,3 +1,5 @@
+using FormsMVVM.Configuration;
+using FormsMVVM.Views;
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -10,8 +12,8 @@ namespace FormsMVVM
 		public App ()
 		{
 			InitializeComponent();
-
-			MainPage = new MainPage();
+            GlobalConfiguration.Configure();
+            MainPage = new NavigationPage(new UserList());
 		}
 
 		protected override void OnStart ()
